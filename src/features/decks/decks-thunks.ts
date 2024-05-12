@@ -7,7 +7,7 @@ import { handleNetworkError } from '../../common/utils/handle-error.ts'
 export const fetchDecksTC = () => (dispatch: Dispatch) => {
   dispatch(setStatus('loading'))
 
-  decksAPI.fetchDecks().then((res) => {
+  return decksAPI.fetchDecks().then((res) => {
     dispatch(setDecksAC(res.data.items))
     dispatch(setStatus('succeeded'))
   })
