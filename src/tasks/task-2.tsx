@@ -3,7 +3,7 @@ type MyComponentProps<Type> = {
   defaultItem: Type
 }
 
-function MyComponent<Type>(props: MyComponentProps<Type>) {
+const MyComponent = <Type, >(props: MyComponentProps<Type>) => {
   console.log(props)
   return <p>some content</p>
 }

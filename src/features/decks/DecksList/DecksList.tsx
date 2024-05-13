@@ -4,10 +4,11 @@ import { useFetchDecks } from './useFetchDecks.ts'
 import { useAppSelector } from '../../../app/store.ts'
 import { LinearLoader } from '../../../common/components/Loader/LinearLoader.tsx'
 import { DeckItemSkeleton } from './DeckItem/DeckItemSkeleton.tsx'
+import { selectAppStatus } from '../../../app/app-selectors.ts'
 
 export const DecksList = () => {
   const { decks, isLoading } = useFetchDecks()
-  const status = useAppSelector(state => state.app.status)
+  const status = useAppSelector(selectAppStatus)
 
   return (
     <ul className={s.list}>
